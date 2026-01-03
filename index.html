@@ -3,44 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Registration - Firebase</title>
+    <title>WeChat</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="row justify-content-center align-items-center min-vh-100">
-            <div class="col-md-6 col-lg-5">
+            <div class="col-md-5 col-lg-4">
                 <div class="card shadow-lg">
                     <div class="card-body p-5">
-                        <h2 class="text-center mb-4" id="formTitle">Login</h2>
+                        <div class="text-center mb-4">
+                            <div class="logo">💬</div>
+                            <h2 id="formTitle">WeChat</h2>
+                            <p class="text-muted">Connect with friends</p>
+                        </div>
                         
                         <!-- Login Form -->
                         <form id="loginForm">
                             <div class="mb-3">
-                                <label for="loginEmail" class="form-label">Email address</label>
+                                <label for="loginEmail" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="loginEmail" required>
                             </div>
                             <div class="mb-3">
                                 <label for="loginPassword" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="loginPassword" required>
                             </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="rememberMe">
-                                <label class="form-check-label" for="rememberMe">Remember me</label>
-                            </div>
                             <button type="submit" class="btn btn-primary w-100 mb-3" id="loginBtn">
                                 <span class="spinner-border spinner-border-sm d-none" id="loginSpinner"></span>
                                 <span id="loginText">Login</span>
                             </button>
-                            <div class="d-flex justify-content-between mb-3">
-                                <a href="#" id="forgotPassword" class="text-decoration-none small">Forgot Password?</a>
-                            </div>
                             <p class="text-center mb-0">
                                 Don't have an account? 
-                                <a href="#" id="showRegister" class="text-decoration-none">Register here</a>
+                                <a href="#" id="showRegister" class="text-decoration-none">Sign up</a>
                             </p>
                         </form>
 
@@ -48,50 +48,28 @@
                         <form id="registerForm" class="d-none">
                             <div class="mb-3">
                                 <label for="registerName" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="registerName" required>
+                                <input type="text" class="form-control" id="registerName" placeholder="Sahel Kabir" required>
                             </div>
                             <div class="mb-3">
-                                <label for="registerEmail" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="registerEmail" required>
+                                <label for="registerEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="registerEmail" placeholder="sahel@example.com" required>
                             </div>
                             <div class="mb-3">
                                 <label for="registerPassword" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="registerPassword" required>
-                                <div class="form-text">Password must be at least 6 characters long</div>
+                                <div class="form-text">At least 6 characters</div>
                             </div>
                             <div class="mb-3">
                                 <label for="confirmPassword" class="form-label">Confirm Password</label>
                                 <input type="password" class="form-control" id="confirmPassword" required>
                             </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="agreeTerms" required>
-                                <label class="form-check-label" for="agreeTerms">
-                                    I agree to the terms and conditions
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-success w-100 mb-3" id="registerBtn">
+                            <button type="submit" class="btn btn-primary w-100 mb-3" id="registerBtn">
                                 <span class="spinner-border spinner-border-sm d-none" id="registerSpinner"></span>
-                                <span id="registerText">Register</span>
+                                <span id="registerText">Sign Up</span>
                             </button>
                             <p class="text-center mb-0">
                                 Already have an account? 
-                                <a href="#" id="showLogin" class="text-decoration-none">Login here</a>
-                            </p>
-                        </form>
-
-                        <!-- Password Reset Form -->
-                        <form id="resetForm" class="d-none">
-                            <div class="mb-3">
-                                <label for="resetEmail" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="resetEmail" required>
-                                <div class="form-text">Enter your email to receive a password reset link</div>
-                            </div>
-                            <button type="submit" class="btn btn-warning w-100 mb-3" id="resetBtn">
-                                <span class="spinner-border spinner-border-sm d-none" id="resetSpinner"></span>
-                                <span id="resetText">Send Reset Link</span>
-                            </button>
-                            <p class="text-center mb-0">
-                                <a href="#" id="backToLogin" class="text-decoration-none">Back to Login</a>
+                                <a href="#" id="showLogin" class="text-decoration-none">Login</a>
                             </p>
                         </form>
 
@@ -114,7 +92,7 @@
     <!-- Firebase Configuration -->
     <script src="firebase-config.js"></script>
     
-    <!-- Custom JavaScript -->
-    <script src="script.js"></script>
+    <!-- Authentication Script -->
+    <script src="auth.js"></script>
 </body>
 </html>
